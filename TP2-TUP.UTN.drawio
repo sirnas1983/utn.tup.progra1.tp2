@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-06T21:28:00.928Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="3-KyVwNXB7-zOznUq122" version="24.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-06T21:29:45.800Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="EkKDzaBMeX_VYevY8-B6" version="24.5.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="874" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -101,13 +101,10 @@
         <mxCell id="u5qOP3ij6ND8CkqJNDUY-20" value="opcionMenuPrincipal" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="190" y="490" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="u5qOP3ij6ND8CkqJNDUY-25" value="mostrarPuntajes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="50" y="648" width="120" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="u5qOP3ij6ND8CkqJNDUY-26" value="Sub verPuntajes" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="u5qOP3ij6ND8CkqJNDUY-26" value="Sub creditos" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="240" y="690" width="160" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="u5qOP3ij6ND8CkqJNDUY-27" value="Fin Sub calcularPuntaje" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="u5qOP3ij6ND8CkqJNDUY-27" value="Fin Sub creditos" style="ellipse;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="240" y="1060" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="u5qOP3ij6ND8CkqJNDUY-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="u5qOP3ij6ND8CkqJNDUY-26" target="u5qOP3ij6ND8CkqJNDUY-27" edge="1">
