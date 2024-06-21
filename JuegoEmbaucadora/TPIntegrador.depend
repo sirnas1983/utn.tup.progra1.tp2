@@ -1,0 +1,312 @@
+# depslib dependency file v1.0
+1717983183 source:c:\users\jacobf\desktop\tpintegrador\mainmanu.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1571584339 c:\users\jacobf\desktop\tpintegrador\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718853348 source:c:\users\jacobf\desktop\tpintegrador\start.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1718853348 source:c:\users\jacobf\desktop\tpintegrador\main.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	<windows.h>
+	<mmsystem.h>
+	<string>
+	<cstdlib>
+	"start.h"
+	<stdlib.h>
+
+1718850641 c:\users\jacobf\desktop\tpintegrador\start.h
+
+1718504068 source:c:\users\jacobf\desktop\tpintegrador\sega.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1718760087 source:c:\users\jacobf\desktop\tpintegrador\prueba.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1718853574 source:c:\users\jacobf\desktop\tpintegrador\intro.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1718852598 source:c:\users\jacobf\desktop\tpintegrador\dibujoletras.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1718759743 source:c:\users\jacobf\desktop\tpintegrador\dibujocartasstart.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1718851089 source:c:\users\jacobf\desktop\tpintegrador\instructions.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1719005060 source:c:\users\jacobf\desktop\copia de prueba\dibujocartasstart.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1571584339 c:\users\jacobf\desktop\copia de prueba\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1719005059 source:c:\users\jacobf\desktop\copia de prueba\dibujoletras.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1719005292 source:c:\users\jacobf\desktop\copia de prueba\instructions.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719002375 source:c:\users\jacobf\desktop\copia de prueba\intro.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719007039 c:\users\jacobf\desktop\copia de prueba\start.h
+
+1719003874 source:c:\users\jacobf\desktop\copia de prueba\main.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	<windows.h>
+	<mmsystem.h>
+	<string>
+	<cstdlib>
+	"start.h"
+	<stdlib.h>
+
+1717983183 source:c:\users\jacobf\desktop\copia de prueba\mainmanu.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1718915514 source:c:\users\jacobf\desktop\copia de prueba\prueba.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719005292 source:c:\users\jacobf\desktop\copia de prueba\start.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1718915920 source:c:\users\jacobf\desktop\copia de prueba\functions.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<locale>
+	<string>
+	<windows.h>
+	"rlutil.h"
+	"start.h"
+
+1719005292 source:c:\users\jacobf\desktop\copia de prueba\background.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1718866637 source:c:\users\jacobf\desktop\copia de prueba\backgrround2.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1719005312 source:c:\users\jacobf\desktop\copia de prueba\creditos.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719005806 source:c:\users\jacobf\desktop\copia de prueba\10main.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	<windows.h>
+	<mmsystem.h>
+	<string>
+	<cstdlib>
+	"start.h"
+	<stdlib.h>
+
+1719005404 source:c:\users\jacobf\desktop\copia de prueba\menujuego.cpp
+
+1719005886 source:c:\users\jacobf\desktop\copia de prueba\20intro.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719006903 source:c:\users\jacobf\desktop\copia de prueba\30menujuego.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719006036 source:c:\users\jacobf\desktop\copia de prueba\31jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<locale>
+	<string>
+	<windows.h>
+	"rlutil.h"
+	"start.h"
+
+1719006867 source:c:\users\jacobf\desktop\copia de prueba\32reglas.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719006187 source:c:\users\jacobf\desktop\copia de prueba\33estadisticas.cpp
+
+1719006867 source:c:\users\jacobf\desktop\copia de prueba\34creditos.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719006296 source:c:\users\jacobf\desktop\copia de prueba\35salir.cpp
+
+1719006867 source:c:\users\jacobf\desktop\copia de prueba\40fondoventana.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"start.h"
+
+1719006481 source:c:\users\jacobf\desktop\copia de prueba\50dibujoletras.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1719006745 source:c:\users\jacobf\desktop\copia de prueba\60dibujocartasmenu.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1719007135 source:c:\mac\home\desktop\tpcongit\10main.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	<windows.h>
+	<mmsystem.h>
+	<string>
+	<cstdlib>
+	"mainHeader.h"
+	<stdlib.h>
+
+1571584339 c:\mac\home\desktop\tpcongit\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1719007039 c:\mac\home\desktop\tpcongit\mainheader.h
+
+1719007135 source:c:\mac\home\desktop\tpcongit\20intro.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"mainHeader.h"
+
+1719007135 source:c:\mac\home\desktop\tpcongit\30menujuego.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"mainHeader.h"
+
+1719007135 source:c:\mac\home\desktop\tpcongit\31jugar.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<locale>
+	<string>
+	<windows.h>
+	"rlutil.h"
+	"mainHeader.h"
+
+1719007135 source:c:\mac\home\desktop\tpcongit\32reglas.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"mainHeader.h"
+
+1719006187 source:c:\mac\home\desktop\tpcongit\33estadisticas.cpp
+
+1719007160 source:c:\mac\home\desktop\tpcongit\34creditos.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"mainHeader.h"
+
+1719006296 source:c:\mac\home\desktop\tpcongit\35salir.cpp
+
+1719007160 source:c:\mac\home\desktop\tpcongit\40fondoventana.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"mainHeader.h"
+
+1719006481 source:c:\mac\home\desktop\tpcongit\50dibujoletras.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+
+1719006745 source:c:\mac\home\desktop\tpcongit\60dibujocartasmenu.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+

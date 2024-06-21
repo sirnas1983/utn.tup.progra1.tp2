@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TPIntegrador" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/TPIntegrador" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/TPIntegrador" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="10main.cpp" />
+		<Unit filename="20intro.cpp" />
+		<Unit filename="30menuJuego.cpp" />
+		<Unit filename="31jugar.cpp" />
+		<Unit filename="32reglas.cpp" />
+		<Unit filename="33estadisticas.cpp" />
+		<Unit filename="34creditos.cpp" />
+		<Unit filename="35salir.cpp" />
+		<Unit filename="40fondoVentana.cpp" />
+		<Unit filename="50dibujoLetras.cpp" />
+		<Unit filename="60dibujoCartasMenu.cpp" />
+		<Unit filename="mainHeader.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
