@@ -31,6 +31,13 @@ void menuJuego(){
         rlutil::locate(55,23);  cout << "  CREDITOS";
         rlutil::locate(55,24);  cout << "   SALIR";
 
+        // NOTA EN LA PARTE INFERIOR DEL MARCO
+        rlutil::setColor(rlutil::GREEN);
+        rlutil::locate(20,29); cout << "  <NOTA> ";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(29,29); cout << " Utilizar las TECLAS DE NAVEGACION + ENTER para acceder a las secciones  ";
+
+
         // PUNTERO >> DE SELECCION
         rlutil::locate(52,20+y);  cout << (char)175 << endl;
 
@@ -69,6 +76,7 @@ void menuJuego(){
 
                     case 4: // SI SE ESTA POSICIONADO EN "SALIR"
                         opcion = 0;
+                        rlutil::cls();
                         //salir();
                         break;
                 }

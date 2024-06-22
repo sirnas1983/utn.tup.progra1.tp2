@@ -5,7 +5,7 @@ using namespace std;
 
 void dibujoCartasMenu(){
 
-
+    // Declaramos algunas variables a utilizar
     int LDC = 33, LDD = 55, LDP = 77 , LDT = 99;
     int LIC = 19, LID = 41, LIP = 63 , LIT = 85;
     int TOFCHAR = (char)219; // Unicamente para las figuras
@@ -145,7 +145,7 @@ void dibujoCartasMenu(){
         rlutil::locate(LDD,10);    cout << (char)186 << endl;
         rlutil::locate(LDD,11);    cout << (char)186 << endl;
         rlutil::locate(LDD,12);    cout << (char)186 << endl;
-        // DIBUJO DE DIAMANTE
+        // DIBUJO INTERNODE DIAMANTE
         rlutil::setColor(rlutil::LIGHTBLUE);
         rlutil::locate(47,7);      cout << (char)219 << endl;
         rlutil::locate(48,7);      cout << (char)219 << endl;
@@ -223,14 +223,14 @@ void dibujoCartasMenu(){
         rlutil::locate(LDP,10);    cout << (char)186 << endl;
         rlutil::locate(LDP,11);    cout << (char)186 << endl;
         rlutil::locate(LDP,12);    cout << (char)186 << endl;
-        // DIBUJO DE PICA
+        // DIBUJO INTERNO DE PICA
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(69,7);      cout << (char)TOFCHAR<< endl;
+        rlutil::locate(69,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(70,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(71,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(67,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(68,8);      cout << (char)TOFCHAR << endl;
-        rlutil::locate(69,8);      cout << (char)TOFCHAR<< endl;
+        rlutil::locate(69,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(70,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(71,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(72,8);      cout << (char)TOFCHAR << endl;
@@ -297,14 +297,14 @@ void dibujoCartasMenu(){
         rlutil::locate(LDT,10);    cout << (char)186 << endl;
         rlutil::locate(LDT,11);    cout << (char)186 << endl;
         rlutil::locate(LDT,12);    cout << (char)186 << endl;
-        // DIBUJO DE TREBOL
+        // DIBUJO INTERNO DE TREBOL
         rlutil::setColor(rlutil::GREEN);
-        rlutil::locate(90,7);      cout << (char)TOFCHAR<< endl;
+        rlutil::locate(90,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(91,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(92,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(93,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(94,7);      cout << (char)TOFCHAR << endl;
-        rlutil::locate(90,8);      cout << (char)TOFCHAR<< endl;
+        rlutil::locate(90,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(91,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(92,8);      cout << (char)TOFCHAR << endl;
         rlutil::locate(93,8);      cout << (char)TOFCHAR << endl;

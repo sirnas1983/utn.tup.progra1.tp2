@@ -229,7 +229,7 @@
 	<locale>
 	"rlutil.h"
 
-1719007135 source:c:\mac\home\desktop\tpcongit\10main.cpp
+1719028216 source:c:\mac\home\desktop\tpcongit\10main.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -262,7 +262,7 @@
 	"rlutil.h"
 	"mainHeader.h"
 
-1719007135 source:c:\mac\home\desktop\tpcongit\30menujuego.cpp
+1719028302 source:c:\mac\home\desktop\tpcongit\30menujuego.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -278,7 +278,7 @@
 	"rlutil.h"
 	"mainHeader.h"
 
-1719007135 source:c:\mac\home\desktop\tpcongit\32reglas.cpp
+1719028216 source:c:\mac\home\desktop\tpcongit\32reglas.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -294,7 +294,7 @@
 
 1719006296 source:c:\mac\home\desktop\tpcongit\35salir.cpp
 
-1719007160 source:c:\mac\home\desktop\tpcongit\40fondoventana.cpp
+1719030028 source:c:\mac\home\desktop\tpcongit\40fondoventana.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -305,7 +305,7 @@
 	<locale>
 	"rlutil.h"
 
-1719006745 source:c:\mac\home\desktop\tpcongit\60dibujocartasmenu.cpp
+1719030028 source:c:\mac\home\desktop\tpcongit\60dibujocartasmenu.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"

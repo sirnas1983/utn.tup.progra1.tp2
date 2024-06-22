@@ -12,15 +12,16 @@ using namespace std;
 
 int main()
 {
+
     //CAPA DE INTRO DEL JUEGO
-    intro();
+    //intro();
     // MUSICA QUE ESTARÁ DE FONDO DURANTE TODO EL JUEGO (EN LOOP)
-    PlaySound(TEXT("startSong.wav"),NULL,SND_ASYNC | SND_LOOP);
+    //PlaySound(TEXT("startSong.wav"),NULL,SND_ASYNC | SND_LOOP);
     // CAPA DE MENÚ PRINCIPAL
     menuJuego();
     //jugar();
     //prueba();
-    //reglas();
+    reglas();
     //creditos();
     //exit();
     return 0;
