@@ -224,7 +224,7 @@ void dibujoCartasMenu(){
         rlutil::locate(LDP,11);    cout << (char)186 << endl;
         rlutil::locate(LDP,12);    cout << (char)186 << endl;
         // DIBUJO INTERNO DE PICA
-        rlutil::setColor(rlutil::YELLOW);
+        rlutil::setColor(rlutil::DARKGREY);
         rlutil::locate(69,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(70,7);      cout << (char)TOFCHAR << endl;
         rlutil::locate(71,7);      cout << (char)TOFCHAR << endl;
