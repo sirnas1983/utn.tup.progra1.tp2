@@ -13,6 +13,7 @@ void menuJuego(){
 
     int corteMenu = 1;
     int  y = 0;
+    int contador = 0;
 
     do {
 
@@ -21,16 +22,25 @@ void menuJuego(){
         // RENDERIZADO DE 4 CARTAS
         dibujoCartasMenu();
 
-        rlutil::setColor(rlutil::RED);
+        rlutil::setColor(rlutil::YELLOW);
         rlutil::locate(50,17);  cout << "JUEGO << EMBAUCADO >>";
 
         // MENU DISPONIBLE EN ESTA CAPA
+        if (contador == 0){
+            rlutil::setColor(rlutil::RED);
+            rlutil::locate(55,20);  cout << "   JUGAR";
+        }else{
+            rlutil::setColor(rlutil::GREEN);
+            rlutil::locate(55,20);  cout << "   JUGAR";
+        }
+
         rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(55,20);  cout << "   JUGAR";
         rlutil::locate(55,21);  cout << "   REGLAS ";
         rlutil::locate(55,22);  cout << "ESTADISTICAS";
         rlutil::locate(55,23);  cout << "  CREDITOS";
         rlutil::locate(55,24);  cout << "   SALIR";
+
+        rlutil::locate(55,26);  cout << "MONEDAS : " << contador ;
 
         // NOTA EN LA PARTE INFERIOR DEL MARCO
         rlutil::setColor(rlutil::GREEN);
@@ -43,6 +53,11 @@ void menuJuego(){
         rlutil::locate(52,20+y);  cout << (char)175 << endl;
 
         switch (rlutil::getkey()) {
+            case 49: // Insert Coin
+                contador++;
+                rlutil::cls();
+                break;
+
             case 14:  // Cursor hacia arriba
                 rlutil::locate(52,20+y); cout << " " << endl;
                 y--;
@@ -58,10 +73,22 @@ void menuJuego(){
             case 1: // AL PRECIONAR LA TECLA ENTER
                 switch (y){
                     case 0: // SI SE ESTA POSICIONADO EN "JUGAR"
-                        rlutil::msleep(1000);
-                        rlutil::cls();
-                        jugar();
-                        break;
+                        if (contador!=0){
+                            rlutil::msleep(1000);
+                            rlutil::cls();
+                            contador--;
+                            jugar();
+                            break;
+                        }else{
+                            rlutil::locate(10,19); cout << "===========================================";
+                            rlutil::locate(10,20); cout << "/";
+                            rlutil::locate(40,20); cout << "/";
+                            rlutil::locate(10,21); cout << "===========================================";
+                            rlutil::setColor(rlutil::WHITE);
+                            rlutil::locate(12,20); cout << "APRIETE 1 PARA INGRESAR MONEDAS";
+                            break;
+                        }
+
 
                     case 1: // SI SE ESTA POSICIONADO EN "REGLAS"
                         reglas();

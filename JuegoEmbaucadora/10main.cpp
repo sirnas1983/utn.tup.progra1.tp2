@@ -15,9 +15,9 @@ int main()
     int corteTotal = 1;
 
     //CAPA DE INTRO DEL JUEGO
-    intro();
+    //intro();
     // MUSICA QUE ESTARÁ DE FONDO DURANTE TODO EL JUEGO (EN LOOP)
-    PlaySound(TEXT("startSong.wav"),NULL,SND_ASYNC | SND_LOOP);
+    //PlaySound(TEXT("startSong.wav"),NULL,SND_ASYNC | SND_LOOP);
 
     // CAPA DE MENÚ PRINCIPAL
         while (corteTotal !=0){
@@ -31,7 +31,7 @@ int main()
 
                 fondoVentana();
 
-                rlutil::locate(40,15); cout << "¿DESEA SALIR DEL JUEGO?";
+                rlutil::locate(40,15); cout << " SEGURO QUE QUIERE SALIR DEL JUEGO?";
                 // NOTA EN LA PARTE INFERIOR DEL MARCO
                 rlutil::setColor(rlutil::GREEN);
                 rlutil::locate(25,29); cout << "  <NOTA> ";
@@ -52,8 +52,13 @@ int main()
 
                     default:
                         rlutil::cls();
-                        // MEJORAR ESTO POR FAVOR
-                        rlutil::locate(40,20); cout << "DEBE PRESIONAR LA TECLA  N O LA TECLA S";
+                        rlutil::setColor(rlutil::RED);
+                        rlutil::locate(40,19); cout << "===========================================";
+                        rlutil::locate(40,20); cout << "/";
+                        rlutil::locate(85,20); cout << "/";
+                        rlutil::locate(40,21); cout << "===========================================";
+                        rlutil::setColor(rlutil::WHITE);
+                        rlutil::locate(42,20); cout << "DEBE PRESIONAR LA TECLA  N O LA TECLA S";
                         break;
                     }
             }
