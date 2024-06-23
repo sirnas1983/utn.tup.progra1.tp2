@@ -76,6 +76,8 @@ void reglas(){
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                    break;
                 }
         }
 
@@ -152,6 +154,8 @@ void reglas(){
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                    break;
                 }
         }
 
@@ -206,6 +210,8 @@ void reglas(){
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                break;
                 }
         }
 
@@ -273,6 +279,8 @@ void reglas(){
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                    break;
                 }
         }
 
@@ -331,22 +339,27 @@ void reglas(){
             rlutil::locate(70,29);  cout << " para volver al inicio de Reglas  ";
 
             switch (rlutil::getkey()){
-                case 114:
+                case 114: // R Minuscula
+                    paginaSiguiente = 32;
+                    break;
+                case 82 : // R Mayuscula
                     paginaSiguiente = 32;
                     break;
                 case 0:
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                    break;
                 }
             }
 
             if (paginaSiguiente == 32 && corteReglas == 0){
-            rlutil::cls();
-            break;
+                rlutil::cls();
+                break;
             }else if(paginaSiguiente == 32){
-            paginaSiguiente = 1; // REASIGNAMOS VALOR
-            rlutil::cls();
+                paginaSiguiente = 1; // REASIGNAMOS VALOR
+                rlutil::cls();
             }
         }
 }
