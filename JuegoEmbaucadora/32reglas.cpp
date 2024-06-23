@@ -9,12 +9,14 @@ void reglas(){
     rlutil::cls();
 
     // Varibales a utilizar
-    int opcion = 1;
-    int siguiente = 1;
+    int corteReglas = 1;
+    int paginaSiguiente = 1;
 
-    while (opcion != 0){
+    while (corteReglas != 0){
 
-        while (siguiente != 32){
+
+
+        while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
             rlutil::cls();
@@ -68,18 +70,23 @@ void reglas(){
 
             switch (rlutil::getkey()){
                 case 32:
-                    siguiente = 32;
+                    paginaSiguiente = 32;
                     break;
                 case  0:
-                    siguiente = 32;
-                    menuJuego();
+                    paginaSiguiente = 32;
+                    corteReglas = 0;
                     break;
                 }
         }
 
-        siguiente = 1; // REASIGNAMOS VALOR A SIGUIENTE
+        if (paginaSiguiente == 32 && corteReglas == 0){
+            rlutil::cls();
+            break;
+        }else if(paginaSiguiente == 32){
+            paginaSiguiente = 1; // REASIGNAMOS VALOR
+        }
 
-        while (siguiente != 32){
+        while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
             rlutil::cls();
@@ -139,18 +146,23 @@ void reglas(){
 
             switch (rlutil::getkey()){
                 case 32:
-                   siguiente = 32;
+                   paginaSiguiente = 32;
                    break;
                 case 0:
-                    siguiente = 32;
-                    menuJuego();
+                    paginaSiguiente = 32;
+                    corteReglas = 0;
                     break;
                 }
         }
 
-        siguiente = 1; // REASIGNAMOS VALOR A SIGUIENTE
+        if (paginaSiguiente == 32 && corteReglas == 0){
+            rlutil::cls();
+            break;
+        }else if(paginaSiguiente == 32){
+            paginaSiguiente = 1; // REASIGNAMOS VALOR
+        }
 
-        while (siguiente != 32){
+        while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
             rlutil::cls();
@@ -188,18 +200,23 @@ void reglas(){
 
             switch (rlutil::getkey()){
                 case 32:
-                   siguiente = 32;
+                   paginaSiguiente = 32;
                    break;
                 case 0:
-                    siguiente = 32;
-                    menuJuego();
+                    paginaSiguiente = 32;
+                    corteReglas = 0;
                     break;
                 }
         }
 
-        siguiente = 1; // REASIGNAMOS VALOR A SIGUIENTE
+        if (paginaSiguiente == 32 && corteReglas == 0){
+            rlutil::cls();
+            break;
+        }else if(paginaSiguiente == 32){
+            paginaSiguiente = 1; // REASIGNAMOS VALOR
+        }
 
-        while (siguiente != 32){
+        while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
             rlutil::cls();
@@ -250,18 +267,23 @@ void reglas(){
 
             switch (rlutil::getkey()){
                 case 32:
-                   siguiente = 32;
+                   paginaSiguiente = 32;
                    break;
                 case 0:
-                    siguiente = 32;
-                    menuJuego();
+                    paginaSiguiente = 32;
+                    corteReglas = 0;
                     break;
                 }
         }
 
-        siguiente = 1; // REASIGNAMOS VALOR A SIGUIENTE
+        if (paginaSiguiente == 32 && corteReglas == 0){
+            rlutil::cls();
+            break;
+        }else if(paginaSiguiente == 32){
+            paginaSiguiente = 1; // REASIGNAMOS VALOR
+        }
 
-        while (siguiente != 32){
+        while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
             rlutil::cls();
@@ -303,31 +325,31 @@ void reglas(){
 
             rlutil::setColor(rlutil::GREEN);
             rlutil::locate(18,29);  cout << "  <ESC>";
-            rlutil::locate(59,29);  cout << "  <ESPACIO>";
+            rlutil::locate(65,29);  cout << "  <R>";
             rlutil::setColor(rlutil::WHITE);
             rlutil::locate(25,29);  cout << " para volver al menu principal  ";
-            rlutil::locate(70,29);  cout << " para ir a la siguiente página  ";
+            rlutil::locate(70,29);  cout << " para volver al inicio de Reglas  ";
 
             switch (rlutil::getkey()){
-                case 32:
-                    siguiente = 32;
-                    menuJuego();
+                case 114:
+                    paginaSiguiente = 32;
                     break;
                 case 0:
-                    siguiente = 32;
-                    menuJuego();
+                    paginaSiguiente = 32;
+                    corteReglas = 0;
                     break;
                 }
             }
 
-           switch(rlutil::getkey()){
-            case 0:
-                rlutil::cls();
-                menuJuego();
-                break;
+            if (paginaSiguiente == 32 && corteReglas == 0){
+            rlutil::cls();
+            break;
+            }else if(paginaSiguiente == 32){
+            paginaSiguiente = 1; // REASIGNAMOS VALOR
+            rlutil::cls();
             }
         }
-    }
+}
 
 
 

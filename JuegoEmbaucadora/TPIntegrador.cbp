@@ -39,7 +39,6 @@
 		<Unit filename="32reglas.cpp" />
 		<Unit filename="33estadisticas.cpp" />
 		<Unit filename="34creditos.cpp" />
-		<Unit filename="35salir.cpp" />
 		<Unit filename="40fondoVentana.cpp" />
 		<Unit filename="50dibujoLetras.cpp" />
 		<Unit filename="60dibujoCartasMenu.cpp" />

@@ -8,21 +8,23 @@ void creditos(){
     rlutil::hidecursor();
     rlutil::cls();
 
-    int opcion = 1;
-    while (opcion !=0) {
+    int corteCreditos = 1;
+
+    while (corteCreditos !=0) {
+
         fondoVentana();
-        rlutil::locate(55,3); cout << "CREDITOS";
+        rlutil::locate(55,3);    cout << "CREDITOS";
 
+        rlutil::locate(55,5);    cout << "Grupo N 18";
 
-        rlutil::locate(21,6);    cout << "      APELLIDO Y NOMBRE    |     ROL       |       COMENTARIO         ";
-        rlutil::locate(21,8);    cout << " HIEBL DARIAN              |    ALUMNO     | LEGAJO = 30390           ";
-        rlutil::locate(21,10);   cout << " FREDES JACOB              |    ALUMNO     | LEGAJO = 27233           ";
-        rlutil::locate(21,12);   cout << " SIMON ANGEL               |   PROFESOR    | Excelente profesional    ";
-        rlutil::locate(21,14);   cout << " FERNANDEZ MAXIMIILIANO    |   PROFESOR    | Excelente profesional    ";
-        rlutil::locate(21,16);   cout << " VELEZ LAURA               |   PROFESORA   | Excelente profesional    ";
-        rlutil::locate(21,18);   cout << " LARA BRIAN                |   PROFESOR    | Excelente profesional    ";
-        rlutil::locate(21,20);   cout << " TAPIA ARIEL               |      JTP      | Excelente profesional    ";
-        rlutil::locate(21,22);   cout << " NIETO ALEJANDRO           |  AYUDANTE TP  | Excelente profesional    ";
+        rlutil::locate(21,8);    cout << "      APELLIDO Y NOMBRE    |     ROL       |       COMENTARIO         ";
+        rlutil::locate(21,10);   cout << " HIEBL DARIAN              |    ALUMNO     | LEGAJO = 30390           ";
+        rlutil::locate(21,12);   cout << " FREDES JACOB              |    ALUMNO     | LEGAJO = 27233           ";
+
+        rlutil::locate(21,16);   cout << "                           MATERIAL UTILIZADO                         ";
+        rlutil::locate(21,18);   cout << "      RECURSO      |   NOMBRE                                         ";
+        rlutil::locate(21,20);   cout << "      Youtube      |   Faizi                                          ";
+        rlutil::locate(21,22);   cout << "      Youtube      |   The Regext                                     ";
 
         rlutil::locate(20,5);    cout <<(char)201;
         rlutil::locate(100,5);   cout <<(char)187;
@@ -30,13 +32,13 @@ void creditos(){
         rlutil::locate(100,23);  cout <<(char)188;
 
 
-        for (int y = 5; y <= 23; y += 2){
+        for (int y = 7; y <= 23; y += 2){
             for (int x = 21; x <= 99; x++){
             rlutil::locate(x,y);    cout <<(char)205;
             }
         }
 
-        for (int y = 6; y <= 22; y++){
+        for (int y = 8; y <= 22; y++){
             for (int x = 20; x <= 20; x++){
             rlutil::locate(x,y);    cout <<(char)186;
             }
@@ -55,11 +57,9 @@ void creditos(){
 
         switch(rlutil::getkey()){
             case 0:
+                corteCreditos = 0;
                 rlutil::cls();
-                opcion=0;
-                menuJuego();
                 break;
             }
-
     }
 }

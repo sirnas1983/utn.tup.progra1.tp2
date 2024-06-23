@@ -11,10 +11,11 @@ void menuJuego(){
     rlutil::cls();
     rlutil::setColor(rlutil::WHITE);
 
-    int opcion = 1;
+    int corteMenu = 1;
     int  y = 0;
 
     do {
+
         // FONDO DE VENTANA (MARCO)
         fondoVentana();
         // RENDERIZADO DE 4 CARTAS
@@ -75,11 +76,11 @@ void menuJuego(){
                         break;
 
                     case 4: // SI SE ESTA POSICIONADO EN "SALIR"
-                        opcion = 0;
+                        corteMenu = 0;
                         rlutil::cls();
-                        //salir();
                         break;
-                }
+                    }
+                break;
             }
-    }while (opcion !=0);
+    }while (corteMenu !=0);
 }
