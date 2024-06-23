@@ -36,34 +36,28 @@ int main()
                 rlutil::setColor(rlutil::GREEN);
                 rlutil::locate(25,29); cout << "  <NOTA> ";
                 rlutil::setColor(rlutil::WHITE);
-                rlutil::locate(33,29); cout << " Presione <S> para SI o <N> para NO ";
+                rlutil::locate(31,29); cout << " Presione <S> para SI o <N> para NO ";
 
                 switch (rlutil::getkey()){
-                    case 115: // S Minuscula
+                    case 115: // S
                         corteSalir = 0;
                         corteTotal = 0;
                         rlutil::cls();
                         break;
-                    case 83: // S Mayuscula
-                        corteSalir = 0;
-                        corteTotal = 0;
-                        rlutil::cls();
-                        break;
-                    case 110: // N Minuscula
+
+                    case 110: // N
                         corteSalir = 0;
                         rlutil::cls();
                         break;
-                    case  78: // N Mayuscula
-                        corteSalir = 0;
-                        rlutil::cls();
-                        break;
+
                     default:
                         rlutil::cls();
                         // MEJORAR ESTO POR FAVOR
-                        rlutil::locate(40,20); cout << "Debe presionar la tecla  N o la tecla S para salir del juego";
+                        rlutil::locate(40,20); cout << "DEBE PRESIONAR LA TECLA  N O LA TECLA S";
                         break;
                     }
             }
+
         }
         rlutil::locate(40,20); cout << "ADIOS";
 return 0;
@@ -72,4 +66,4 @@ return 0;
 //jugar();
     //prueba();
     //reglas();
-    //
+    //creditos();
