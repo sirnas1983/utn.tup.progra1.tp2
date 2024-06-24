@@ -69,11 +69,15 @@ void inicializarVectorEnCero(int vect[], int longitud){
 
 // Función para mostrar la mano de un jugador
 void mostrarMano(int vectorMano[], int vectorPalo[], string vectorDeVisualizacionValor[], string vectorDeVisualizacionPalo[]) {
-    for (int i = 0; i < 5; i++) {
-        cout << "Carta " << i + 1 << ": Valor = " << vectorDeVisualizacionValor[vectorMano[i]]
+
+         for (int i = 0; i < 5; i++) {
+
+        rlutil::locate(10,12+i); cout << "Carta " << i + 1 << ": Valor = " << vectorDeVisualizacionValor[vectorMano[i]]
              << ", Palo = " << vectorDeVisualizacionPalo[vectorPalo[i]] << endl;
         Sleep(300);
     }
+
+
 }
 
 
@@ -94,6 +98,7 @@ void pausarYLimpiarPantalla() {
 void jugar() {
     // Inicializar la semilla del generador de números aleatorios - Esto debe ir sí o sí al inicio del programa
     srand(static_cast<unsigned int>(time(0)));
+    fondoVentana();
 
     // Constantes del Juego y declaración de variables
     int vectorDePuntaje[5] = {10, 11, 12, 15, 20}; // Vector fijo con los puntajes de las cartas
@@ -117,85 +122,169 @@ void jugar() {
     string topScoreNombre = "";
 
     rlutil::locate(45,3); cout << "Bienvenidos a EMBAUCADO!" << endl;
+
     do{
         acumJug1 = 0;
         acumJug2 = 0;
+
+        rlutil::hidecursor();
+
         inicializarVectorEnCero(vectorPuntajeJug1, 3);
         inicializarVectorEnCero(vectorPuntajeJug2, 3);
 
-        rlutil::locate(35,5);   cout << "Por favor ingrese los nombres de los jugadores" << endl;
-        rlutil::locate(20,7);   cout << "Jugador N° 1: " << endl;
-        rlutil::locate(35,7);   cin  >> nombreJug1;
-        rlutil::locate(70,7);   cout << "Jugador N° 2: " << endl;
-        rlutil::locate(85,7);   cin  >> nombreJug2;
+        int confirmarNombres = 1;
+        int ingresarNombres  = 1;
+        // INGRESO DE NOMBRES Y VALIDACION EN CASO DE ERROR
+
+        while(ingresarNombres!=0 ){
+
+            fondoVentana();
+
+            rlutil::setColor(rlutil::GREEN);
+            rlutil::locate(35,5);   cout << "Por favor ingrese los nombres de los jugadores" << endl;
+            rlutil::setColor(rlutil::WHITE);
+            rlutil::locate(20,7);   cout << "Jugador N° 1: " << endl;
+            rlutil::locate(35,7);   cin  >> nombreJug1;
+            rlutil::locate(70,7);   cout << "Jugador N° 2: " << endl;
+            rlutil::locate(85,7);   cin  >> nombreJug2;
+
+
+            while (confirmarNombres !=0){
+
+                //rlutil::cls();
+                rlutil::setColor(rlutil::GREEN);
+                rlutil::locate(40,15); cout << "=========================================";
+                rlutil::locate(40,16); cout << "|";
+                rlutil::locate(80,16); cout << "|";
+                rlutil::locate(40,17); cout << "=========================================";
+                rlutil::setColor(rlutil::WHITE);
+                rlutil::locate(42,16); cout << "      Confirma los nombres? (S/N)";
+
+                switch (rlutil::getkey()) {
+                    case 115: // S Minuscula
+                        confirmarNombres = 0;
+                        ingresarNombres  = 0;
+                        rlutil::cls();
+                        break;
+
+                    case 83:  // S Mayuscula
+                        confirmarNombres = 0;
+                        ingresarNombres  = 0;
+                        rlutil::cls();
+                        break;
+
+                    case 110: // N Minuscula
+                        confirmarNombres = 0;
+                        rlutil::cls();
+                        break;
+
+                    case 78: // N Mayuscula
+                        confirmarNombres = 0;
+                        rlutil::cls();
+                        break;
+
+                    default:
+                        rlutil::setColor(rlutil::RED);
+                        rlutil::locate(40,19); cout << "=========================================";
+                        rlutil::locate(40,20); cout << "|";
+                        rlutil::locate(80,20); cout << "|";
+                        rlutil::locate(40,21); cout << "=========================================";
+                        rlutil::setColor(rlutil::WHITE);
+                        rlutil::locate(42,20); cout << " Utilice las teclas correspondientes!";
+                        break;
+                    }
+
+              }
+        }
+
         //pausarYLimpiarPantalla();
-        for (int ronda = 1; ronda <= 3; ronda ++){
-            inicializarVectorEnFalse(cartasSeleccionadas, 20); // Asignamos falso a todas las posiciones del vector
-            int embaucadora = aleatorioEntre(0, 3); // Embaucadora
-            // Generamos una mano aleatoria para cada jugador
-            generarManoAleatoria(vectorManoJug1, vectorPaloJug1, cartasSeleccionadas);
-            generarManoAleatoria(vectorManoJug2, vectorPaloJug2, cartasSeleccionadas);
+        // 3 RONDAS
+        int corteRondas = 1;
 
-            cout << "MANO N°: " << ronda << endl;
-            cout << "-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-" << endl;
-            // Mostrar la carta embaucadora
-            cout << "|Carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << "|" << endl;
-            cout << "-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-" << endl;
-            // Mostrar la mano del Jugador 1
-            cout <<nombreJug1 <<" (" << acumJug1 <<"):" << endl;
-            mostrarMano(vectorManoJug1, vectorPaloJug1, vectorDeVisualizacionValor, vectorDeVisualizacionPalo);
-            cout << "------------------------" << endl;
-            // Mostrar la mano del Jugador 2
+        while ( corteRondas != 0){
+            fondoVentana();
 
-            cout <<nombreJug2 <<" (" << acumJug2 <<"):" << endl;
-            mostrarMano(vectorManoJug2, vectorPaloJug2, vectorDeVisualizacionValor, vectorDeVisualizacionPalo);
-            cout << "------------------------" << endl;
+            for (int ronda = 1; ronda <= 3; ronda ++){
 
-            // Módulo para cambiar carta embaucadora en función del puntaje acumulado y la selección del jugador
-            if (ronda != 1){
-                embaucadoraAnt = embaucadora;
-                if (ronda == 2 && acumJug1 >= 20) {
-                    do {
-                        cout << nombreJug1 << " tienes la posibilidad de cambiar la embaucadora! ¿Quieres hacerlo? S para sí, N para no: " << endl;
-                        cin >> opcion;
-                    } while (opcion != 'S' && opcion != 'N');
-                    if (opcion == 'S'){
-                        do{
-                            embaucadora = aleatorioEntre(0, 3);
-                        } while(embaucadora == embaucadoraAnt);
-                        cout << nombreJug1 << ", se le restaron 20 puntos de su puntaje" << endl;
-                        cout << "Nueva carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
-                        acumJug1 -= 20;
+                inicializarVectorEnFalse(cartasSeleccionadas, 20); // Asignamos falso a todas las posiciones del vector
+                int embaucadora = aleatorioEntre(0, 3); // Embaucadora
+                // Generamos una mano aleatoria para cada jugador
+                generarManoAleatoria(vectorManoJug1, vectorPaloJug1, cartasSeleccionadas);
+                generarManoAleatoria(vectorManoJug2, vectorPaloJug2, cartasSeleccionadas);
+
+                rlutil::setColor(rlutil::RED);
+                rlutil::locate(60,3); cout << "EMBAUCADO!" << endl;
+
+                rlutil::setColor(rlutil::WHITE);
+                rlutil::locate(53,5); cout << "MANO N°: " << ronda << endl;
+                rlutil::locate(40,6); cout << "==================================" << endl;
+                // Mostrar la carta embaucadora
+                rlutil::locate(40,7); cout << "|Carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << "|" << endl;
+                rlutil::locate(40,8);cout << "===================================" << endl;
+
+                // Mostrar la mano del Jugador 1
+                rlutil::locate(10,11); cout <<nombreJug1 <<" (" << acumJug1 <<"):" << endl;
+                mostrarMano(vectorManoJug1, vectorPaloJug1, vectorDeVisualizacionValor, vectorDeVisualizacionPalo);
+                cout << "------------------------" << endl;
+                // Mostrar la mano del Jugador 2
+
+                rlutil::locate(50,11); cout <<nombreJug2 <<" (" << acumJug2 <<"):" << endl;
+                mostrarMano(vectorManoJug2, vectorPaloJug2, vectorDeVisualizacionValor, vectorDeVisualizacionPalo);
+                cout << "------------------------" << endl;
+
+                // Módulo para cambiar carta embaucadora en función del puntaje acumulado y la selección del jugador
+                if (ronda != 1){
+                    embaucadoraAnt = embaucadora;
+                    if (ronda == 2 && acumJug1 >= 20) {
+                        do {
+                            cout << nombreJug1 << " tienes la posibilidad de cambiar la embaucadora! ¿Quieres hacerlo? S para sí, N para no: " << endl;
+                            cin >> opcion;
+                        } while (opcion != 'S' && opcion != 'N');
+                        if (opcion == 'S'){
+                            do{
+                                embaucadora = aleatorioEntre(0, 3);
+                            } while(embaucadora == embaucadoraAnt);
+                            cout << nombreJug1 << ", se le restaron 20 puntos de su puntaje" << endl;
+                            cout << "Nueva carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
+                            acumJug1 -= 20;
+                        }
+                    } else if (ronda == 3 && acumJug2 >= 20) {
+                        do {
+                            cout << nombreJug2 << " tienes la posibilidad de cambiar la embaucadora! ¿Quieres hacerlo? S para sí, N para no: " << endl;
+                            cin >> opcion;
+                        } while (opcion != 'S' && opcion != 'N');
+                        if (opcion == 'S'){
+                            do{
+                                embaucadora = aleatorioEntre(0, 3);
+                            } while(embaucadora == embaucadoraAnt);
+                            cout << nombreJug2 << ", se le restaron 20 puntos de su puntaje" << endl;
+                            cout << "Nueva carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
+                            acumJug2 -= 20;
+                        }
                     }
-                } else if (ronda == 3 && acumJug2 >= 20) {
-                    do {
-                        cout << nombreJug2 << " tienes la posibilidad de cambiar la embaucadora! ¿Quieres hacerlo? S para sí, N para no: " << endl;
-                        cin >> opcion;
-                    } while (opcion != 'S' && opcion != 'N');
-                    if (opcion == 'S'){
-                        do{
-                            embaucadora = aleatorioEntre(0, 3);
-                        } while(embaucadora == embaucadoraAnt);
-                        cout << nombreJug2 << ", se le restaron 20 puntos de su puntaje" << endl;
-                        cout << "Nueva carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
-                        acumJug2 -= 20;
-                    }
+
                 }
 
+                // Calculamos el puntaje de cada jugador
+                int puntajeJug1 = calcularPuntaje(embaucadora, vectorManoJug1, vectorPaloJug1, vectorDePuntaje);
+                int puntajeJug2 = calcularPuntaje(embaucadora, vectorManoJug2, vectorPaloJug2, vectorDePuntaje);
+                Sleep(300);
+
+                vectorPuntajeJug1[ronda-1] = puntajeJug1;
+                vectorPuntajeJug2[ronda-1] = puntajeJug2;
+                mostrarPuntajeAcumulado(nombreJug1, nombreJug2, puntajeJug1, puntajeJug2);
+                acumJug1 += puntajeJug1;
+                acumJug2 += puntajeJug2;
+
+                pausarYLimpiarPantalla();
             }
 
-            // Calculamos el puntaje de cada jugador
-            int puntajeJug1 = calcularPuntaje(embaucadora, vectorManoJug1, vectorPaloJug1, vectorDePuntaje);
-            int puntajeJug2 = calcularPuntaje(embaucadora, vectorManoJug2, vectorPaloJug2, vectorDePuntaje);
-            Sleep(300);
-            vectorPuntajeJug1[ronda-1] = puntajeJug1;
-            vectorPuntajeJug2[ronda-1] = puntajeJug2;
-            mostrarPuntajeAcumulado(nombreJug1, nombreJug2, puntajeJug1, puntajeJug2);
-            acumJug1 += puntajeJug1;
-            acumJug2 += puntajeJug2;
-
-            pausarYLimpiarPantalla();
         }
+
+        system("pause");
+
+
+
 
         // Mostrar la tabla de puntajes
         cout << "Tabla de Puntajes:" << endl;
@@ -248,5 +337,7 @@ void jugar() {
 
         cin >> jugarOtra;
     } while(jugarOtra == 'S');
-    cout << "¡GRACIAS POR JUGAR EMBAUCADO! Espero lo hayan disfrutado" << endl;
+    //cout << "¡GRACIAS POR JUGAR EMBAUCADO! Espero lo hayan disfrutado" << endl;
 }
+
+

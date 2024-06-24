@@ -38,15 +38,25 @@ void menuJuego(){
         rlutil::locate(55,21);  cout << "   REGLAS ";
         rlutil::locate(55,22);  cout << "ESTADISTICAS";
         rlutil::locate(55,23);  cout << "  CREDITOS";
-        rlutil::locate(55,24);  cout << "   SALIR";
+        rlutil::locate(55,24);  cout << "  CONTACTO";
+        rlutil::locate(55,25);  cout << "   SALIR";
 
-        rlutil::locate(55,26);  cout << "MONEDAS : " << contador ;
+        rlutil::setColor(rlutil::GREEN);
+        rlutil::locate(6,20);   cout << "=========================================";
+        rlutil::locate(6,21);   cout << "|";
+        rlutil::locate(46,21);  cout << "|";
+        rlutil::locate(6,22);   cout << "=========================================";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(8,21);   cout << "Pulse la tecla 1 para agregar monedas";
+
+
+        rlutil::locate(55,27);  cout << "MONEDAS : " << contador ;
 
         // NOTA EN LA PARTE INFERIOR DEL MARCO
         rlutil::setColor(rlutil::GREEN);
-        rlutil::locate(20,29); cout << "  <NOTA> ";
+        rlutil::locate(20,29);  cout << "  <NOTA> ";
         rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(29,29); cout << " Utilizar las TECLAS DE NAVEGACION + ENTER para acceder a las secciones  ";
+        rlutil::locate(29,29);  cout << " Utilizar las TECLAS DE NAVEGACION + ENTER para acceder a las secciones  ";
 
 
         // PUNTERO >> DE SELECCION
@@ -67,7 +77,7 @@ void menuJuego(){
             case 15:  // Cursor hacia abajo
                 rlutil::locate(52,20+y); cout << " " << endl;
                 y++;
-                if (y>4){y=4;}
+                if (y>5){y=5;}
                 break;
 
             case 1: // AL PRECIONAR LA TECLA ENTER
@@ -80,15 +90,16 @@ void menuJuego(){
                             jugar();
                             break;
                         }else{
-                            rlutil::locate(10,19); cout << "===========================================";
-                            rlutil::locate(10,20); cout << "/";
-                            rlutil::locate(40,20); cout << "/";
-                            rlutil::locate(10,21); cout << "===========================================";
+                            rlutil::cls();
+                            rlutil::setColor(rlutil::RED);
+                            rlutil::locate(6,23);  cout << "=========================================";
+                            rlutil::locate(6,24);  cout << "|";
+                            rlutil::locate(46,24); cout << "|";
+                            rlutil::locate(6,25);  cout << "=========================================";
                             rlutil::setColor(rlutil::WHITE);
-                            rlutil::locate(12,20); cout << "APRIETE 1 PARA INGRESAR MONEDAS";
+                            rlutil::locate(8,24);  cout << "          Tiene 0 monedas!";
                             break;
                         }
-
 
                     case 1: // SI SE ESTA POSICIONADO EN "REGLAS"
                         reglas();
@@ -102,12 +113,26 @@ void menuJuego(){
                         creditos();
                         break;
 
-                    case 4: // SI SE ESTA POSICIONADO EN "SALIR"
+                    case 4: // SI SE ESTA POSICIONADO EN "CONTACTO"
+                        contacto();
+                        break;
+                    case 5: // SI SE ESTA POSICIONADO EN "SALIR"
                         corteMenu = 0;
                         rlutil::cls();
                         break;
                     }
                 break;
+
+                default:
+                        rlutil::cls();
+                        rlutil::setColor(rlutil::RED);
+                        rlutil::locate(6,23);  cout << "=========================================";
+                        rlutil::locate(6,24);  cout << "|";
+                        rlutil::locate(46,24); cout << "|";
+                        rlutil::locate(6,25);  cout << "=========================================";
+                        rlutil::setColor(rlutil::WHITE);
+                        rlutil::locate(7,24);  cout << "  Utilice las teclas correspondientes!";
+                        break;
             }
     }while (corteMenu !=0);
 }

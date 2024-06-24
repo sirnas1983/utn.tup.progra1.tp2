@@ -229,7 +229,7 @@
 	<locale>
 	"rlutil.h"
 
-1719182365 source:c:\mac\home\desktop\tpcongit\10main.cpp
+1719266960 source:c:\mac\home\desktop\tpcongit\10main.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -254,7 +254,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1719073057 c:\mac\home\desktop\tpcongit\mainheader.h
+1719211095 c:\mac\home\desktop\tpcongit\mainheader.h
 
 1719007135 source:c:\mac\home\desktop\tpcongit\20intro.cpp
 	<iostream>
@@ -262,13 +262,13 @@
 	"rlutil.h"
 	"mainHeader.h"
 
-1719182903 source:c:\mac\home\desktop\tpcongit\30menujuego.cpp
+1719267018 source:c:\mac\home\desktop\tpcongit\30menujuego.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
 	"mainHeader.h"
 
-1719007135 source:c:\mac\home\desktop\tpcongit\31jugar.cpp
+1719260577 source:c:\mac\home\desktop\tpcongit\31jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -278,7 +278,7 @@
 	"rlutil.h"
 	"mainHeader.h"
 
-1719094616 source:c:\mac\home\desktop\tpcongit\32reglas.cpp
+1719202421 source:c:\mac\home\desktop\tpcongit\32reglas.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -286,7 +286,7 @@
 
 1719006187 source:c:\mac\home\desktop\tpcongit\33estadisticas.cpp
 
-1719095237 source:c:\mac\home\desktop\tpcongit\34creditos.cpp
+1719203531 source:c:\mac\home\desktop\tpcongit\34creditos.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"
@@ -313,4 +313,10 @@
 	<iostream>
 	<locale>
 	"rlutil.h"
+
+1719211095 source:c:\mac\home\desktop\tpcongit\35contacto.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"mainHeader.h"
 

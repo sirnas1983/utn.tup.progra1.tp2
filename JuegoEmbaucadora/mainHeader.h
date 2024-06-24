@@ -26,7 +26,8 @@ void salir();
     void reglas();
     // CREDITOS
     void creditos();
-
+    // CONTACTO
+    void contacto();
 // FONDO + DIBUJOS
 void fondoVentana();
 void dibujoLetras();

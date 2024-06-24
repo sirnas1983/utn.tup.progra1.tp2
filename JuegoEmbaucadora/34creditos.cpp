@@ -60,6 +60,17 @@ void creditos(){
                 corteCreditos = 0;
                 rlutil::cls();
                 break;
+
+            default:
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+                rlutil::locate(40,25); cout << "=========================================";
+                rlutil::locate(40,26); cout << "|";
+                rlutil::locate(80,26); cout << "|";
+                rlutil::locate(40,27); cout << "=========================================";
+                rlutil::setColor(rlutil::WHITE);
+                rlutil::locate(42,26); cout << " Utilice las teclas correspondientes!";
+                break;
             }
     }
 }
