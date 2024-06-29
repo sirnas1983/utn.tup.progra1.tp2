@@ -31,7 +31,7 @@ void contacto(){
         rlutil::locate(7,16); cout <<  "Atentamente.";
 
         rlutil::locate(7,17); cout <<  "El equipo de desarrollo.";
-        rlutil::locate(7,17); cout <<  "El equipo de desarrollo.";
+
         //rlutil::setColor(rlutil::BLACK);
 
         rlutil::setColor(rlutil::GREEN);

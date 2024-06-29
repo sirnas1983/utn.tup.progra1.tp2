@@ -5,25 +5,25 @@
 using namespace std;
 
 void reglas(){
-    rlutil::hidecursor();
-    rlutil::cls();
 
-    // Varibales a utilizar
+    rlutil::hidecursor(); // Herramienta que oculta el cursosor
+    rlutil::cls();        // Herramienta que limpia la terminal
+
+    // Declaracion y asignacion de varibales a utilizar
     int corteReglas = 1;
     int paginaSiguiente = 1;
 
     while (corteReglas != 0){
 
-
-
         while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
-            rlutil::cls();
             fondoVentana();
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(50,2);  cout << "REGLAS DEL JUEGO    1/5";
 
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,4);   cout << "Embaucado es un juego de naipes para dos jugadores que puede jugarse con algunas cartas de la baraja francesa";
             rlutil::locate(5,5);   cout << "y con un mazo de cartas especiales llamado figuras. Las cartas de la baraja francesa a utilizar son los 10, J,";
             rlutil::locate(5,6);   cout << "Q, K y A de las cuatro figuras Corazón, Diamantes, Picas y Tréboles. En total son 20 cartas.";
@@ -35,8 +35,10 @@ void reglas(){
             rlutil::locate(30,14); cout << "El puntaje de cada jugador se determina a partir de los naipes de su mano y la carta";
             rlutil::locate(30,15); cout << "embaucadora es la que impide que el jugador pueda sumar puntaje";
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(30,17); cout << "TENER EN CUENTA LO SIGUIENTE: ";
 
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(30,19); cout << "- Las cartas embaucadas de cada jugador no son utilizadas para el cálculo de sus";
             rlutil::locate(30,20); cout << "  respectivos puntajes.";
             rlutil::locate(30,21); cout << "- Esta mecánica de juego se repite tres veces y quien logre la mayor cantidad de ";
@@ -47,7 +49,10 @@ void reglas(){
             rlutil::locate(30,26); cout << "  embaucadora de la ronda, cada jugador puede decidir sacrificar 20 puntos para ";
             rlutil::locate(30,27); cout << "  que la carta embaucadora se vuelva a obtener.";
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(8,14);  cout << "TABLA DE VALORES ";
+
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,15);  cout << "======================";
             rlutil::locate(5,16);  cout << "|  NAIPE  |  PUNTAJE |";
             rlutil::locate(5,17);  cout << "======================";
@@ -61,6 +66,7 @@ void reglas(){
             rlutil::locate(5,25);  cout << "======================";
             rlutil::locate(5,26);  cout << "|   A     |    20    |";
             rlutil::locate(5,27);  cout << "======================";
+
             rlutil::setColor(rlutil::GREEN);
             rlutil::locate(18,29); cout << "  <ESC>";
             rlutil::locate(59,29); cout << "  <ESPACIO>";
@@ -69,12 +75,22 @@ void reglas(){
             rlutil::locate(70,29); cout << " para ir a la siguiente página  ";
 
             switch (rlutil::getkey()){
+
                 case 32:
                     paginaSiguiente = 32;
                     break;
                 case  0:
                     paginaSiguiente = 32;
                     corteReglas = 0;
+                    break;
+                default:
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(69,16);    cout << "=========================================";
+                    rlutil::locate(69,17);    cout << "|";
+                    rlutil::locate(109,17);   cout << "|";
+                    rlutil::locate(69,18);    cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(70,17);    cout << "  Utilice las teclas correspondientes!";
                     break;
                 }
         }
@@ -84,18 +100,19 @@ void reglas(){
             break;
         }else if(paginaSiguiente == 32){
             paginaSiguiente = 1; // REASIGNAMOS VALOR
+            rlutil::cls();
         }
 
         while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
-            rlutil::cls();
             fondoVentana();
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(50,2);  cout << "REGLAS DEL JUEGO    2/5";
 
-
             rlutil::locate(5,4);   cout << "DESARROLLO DE LA PARTIDA: ";
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,6);   cout << "Veamos un ejemplo de una ronda y las manos de sus jugadores:";
 
             rlutil::locate(5,8);   cout << "=================================================================";
@@ -120,7 +137,6 @@ void reglas(){
             rlutil::locate(72,14); cout << "mano  que no fueron  embaucados  son:  J  de ";
             rlutil::locate(72,15); cout << "Diamante y K de Pica.";
 
-
             rlutil::locate(72,17); cout << "En el  caso del  Jugador 2, los  naipes de su";
             rlutil::locate(72,18); cout << "mano  que  no fueron  embaucados son: 10  de ";
             rlutil::locate(72,19); cout << "Diamante, Q de  Pica, Q de  Trébol  y Q  de ";
@@ -136,7 +152,6 @@ void reglas(){
             rlutil::locate(60,25); cout << "10 de Diamante (10) + Q de Pica (12) + Q de Trebol (12)";
             rlutil::locate(60,26); cout << "+ Q de Diamante (12) = 46 puntos";
 
-
             rlutil::setColor(rlutil::GREEN);
             rlutil::locate(18,29); cout << "  <ESC>";
             rlutil::locate(59,29); cout << "  <ESPACIO>";
@@ -145,12 +160,22 @@ void reglas(){
             rlutil::locate(70,29); cout << " para ir a la siguiente página  ";
 
             switch (rlutil::getkey()){
+
                 case 32:
                    paginaSiguiente = 32;
                    break;
                 case 0:
                     paginaSiguiente = 32;
                     corteReglas = 0;
+                    break;
+                default:
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(74,4);    cout << "=========================================";
+                    rlutil::locate(74,5);    cout << "|";
+                    rlutil::locate(114,5);   cout << "|";
+                    rlutil::locate(74,6);    cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(75,5);    cout << "  Utilice las teclas correspondientes!";
                     break;
                 }
         }
@@ -160,16 +185,18 @@ void reglas(){
             break;
         }else if(paginaSiguiente == 32){
             paginaSiguiente = 1; // REASIGNAMOS VALOR
+            rlutil::cls();
         }
 
         while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
-            rlutil::cls();
             fondoVentana();
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(50,2);  cout << "REGLAS DEL JUEGO    3/5";
 
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,4);   cout << "Como se puede observar, las cartas  embaucadas de cada jugador no son utilizadas para el calculo de sus";
             rlutil::locate(5,5);   cout << "respectivos puntajes.";
 
@@ -188,7 +215,7 @@ void reglas(){
             rlutil::locate(5,20);  cout << "- En la ronda 3, es el jugador 2 quien puede acceder a sacrificar puntos primero y si no lo hace, puede ";
             rlutil::locate(5,21);  cout << "  hacerlo el jugador 1.";
 
-            rlutil::locate(35,25); cout << "Analizaremos este caso en la siguiente pagina == >";
+            rlutil::locate(35,26); cout << "Analizaremos este caso en la siguiente pagina == >";
 
 
             rlutil::setColor(rlutil::GREEN);
@@ -206,6 +233,15 @@ void reglas(){
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(40,22);   cout << "=========================================";
+                    rlutil::locate(40,23);   cout << "|";
+                    rlutil::locate(80,23);   cout << "|";
+                    rlutil::locate(40,24);   cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(41,23);   cout << "  Utilice las teclas correspondientes!";
+                    break;
                 }
         }
 
@@ -214,17 +250,19 @@ void reglas(){
             break;
         }else if(paginaSiguiente == 32){
             paginaSiguiente = 1; // REASIGNAMOS VALOR
+            rlutil::cls();
         }
 
         while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
-            rlutil::cls();
             fondoVentana();
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(50,2);  cout << "REGLAS DEL JUEGO    4/5";
 
             rlutil::locate(5,4);   cout << "EJEMPLO";
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,5);   cout << "Supongamos que, al repartir las cartas, las manos de los jugadores son las siguientes:";
 
             rlutil::locate(5,7);   cout << "===================================================================";
@@ -273,6 +311,15 @@ void reglas(){
                     paginaSiguiente = 32;
                     corteReglas = 0;
                     break;
+                default:
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(40,25);   cout << "=========================================";
+                    rlutil::locate(40,26);   cout << "|";
+                    rlutil::locate(80,26);   cout << "|";
+                    rlutil::locate(40,27);   cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(41,26);   cout << "  Utilice las teclas correspondientes!";
+                    break;
                 }
         }
 
@@ -281,22 +328,26 @@ void reglas(){
             break;
         }else if(paginaSiguiente == 32){
             paginaSiguiente = 1; // REASIGNAMOS VALOR
+            rlutil::cls();
         }
 
         while (paginaSiguiente != 32){
 
             rlutil::setBackgroundColor(rlutil::BLACK);
-            rlutil::cls();
             fondoVentana();
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(50,2);   cout << "REGLAS DEL JUEGO    5/5";
 
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,4);    cout << "Los puntajes totales hasta el momento serian:";
             rlutil::locate(5,6);    cout << "Jugador 1 : 6 puntos + 68 puntos = 74 puntos";
             rlutil::locate(5,7);    cout << "Jugador 2 : 46 puntos + 12 puntos = 58 puntos";
 
+            rlutil::setColor(rlutil::YELLOW);
             rlutil::locate(5,9);    cout << "FIN DE LA PARTIDA: ";
 
+            rlutil::setColor(rlutil::WHITE);
             rlutil::locate(5,11);   cout << "Luego de haber transcurrido las tres rondas, quien haya obtenido más puntos en total es quien gana la partida.";
             rlutil::locate(5,12);   cout << "En el caso de que ambos jugadores se encuentren empatados al finalizar, ganará aquel jugador que haya obtenido";
             rlutil::locate(5,13);   cout << "más puntos en una ronda.";
@@ -324,29 +375,29 @@ void reglas(){
             rlutil::locate(50,25);  cout << "terminará en empate.";
 
             rlutil::setColor(rlutil::GREEN);
-            rlutil::locate(18,29);  cout << "  <ESC>";
-            rlutil::locate(65,29);  cout << "  <R>";
+            rlutil::locate(43,29);  cout << "  <ESC>";
+            //rlutil::locate(65,29);  cout << "  <R>";
             rlutil::setColor(rlutil::WHITE);
-            rlutil::locate(25,29);  cout << " para volver al menu principal  ";
-            rlutil::locate(70,29);  cout << " para volver al inicio de Reglas  ";
+            rlutil::locate(50,29);  cout << " para volver al menu principal  ";
+            //rlutil::locate(70,29);  cout << " para volver al inicio de Reglas  ";
 
             switch (rlutil::getkey()){
-                case 114:
-                    paginaSiguiente = 32;
-                    break;
                 case 0:
                     paginaSiguiente = 32;
                     corteReglas = 0;
+                    rlutil::cls();
+                    break;
+
+                default:
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(63,5);   cout << "=========================================";
+                    rlutil::locate(63,6);   cout << "|";
+                    rlutil::locate(103,6);  cout << "|";
+                    rlutil::locate(63,7);   cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(64,6);   cout << "  Utilice las teclas correspondientes!";
                     break;
                 }
-            }
-
-            if (paginaSiguiente == 32 && corteReglas == 0){
-            rlutil::cls();
-            break;
-            }else if(paginaSiguiente == 32){
-            paginaSiguiente = 1; // REASIGNAMOS VALOR
-            rlutil::cls();
             }
         }
 }

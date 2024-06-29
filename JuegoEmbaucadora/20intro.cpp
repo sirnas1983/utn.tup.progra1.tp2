@@ -11,7 +11,7 @@ void intro(){
     // LIMPIA EL CONTENIDO DE TODA LA CONSOLA
     rlutil::cls();
     // INTEGRACION DE MÚSICA DE FONDO A ESTA CAPA
-    PlaySound(TEXT("introSong.wav"),NULL,SND_ASYNC);
+    PlaySound(TEXT("introSong.wav"),NULL, SND_FILENAME | SND_ASYNC);
     // FUNCIÓN QUE DIBUJA LAS LETRAS S , E , G , A
     dibujoLetras();
     // SE PAUSA LA EJECUCIÓN DEL PROGRAMA (5S)

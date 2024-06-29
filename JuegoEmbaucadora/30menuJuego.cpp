@@ -11,12 +11,12 @@ void menuJuego(){
     rlutil::cls();
     rlutil::setColor(rlutil::WHITE);
 
-    int corteMenu = 1;
+    int corteMenu  = 1;
+    //int corteSalir = 1;
     int  y = 0;
     int contador = 0;
 
     do {
-
         // FONDO DE VENTANA (MARCO)
         fondoVentana();
         // RENDERIZADO DE 4 CARTAS
@@ -106,7 +106,7 @@ void menuJuego(){
                         break;
 
                     case 2: // SI SE ESTA POSICIONADO EN "ESTADISTICAS"
-                        //estadisticas();
+                        estadisticas();
                         break;
 
                     case 3: // SI SE ESTA POSICIONADO EN "CREDITOS"
@@ -117,22 +117,21 @@ void menuJuego(){
                         contacto();
                         break;
                     case 5: // SI SE ESTA POSICIONADO EN "SALIR"
-                        corteMenu = 0;
-                        rlutil::cls();
+                        salir(corteMenu);
                         break;
                     }
                 break;
 
-                default:
-                        rlutil::cls();
-                        rlutil::setColor(rlutil::RED);
-                        rlutil::locate(6,23);  cout << "=========================================";
-                        rlutil::locate(6,24);  cout << "|";
-                        rlutil::locate(46,24); cout << "|";
-                        rlutil::locate(6,25);  cout << "=========================================";
-                        rlutil::setColor(rlutil::WHITE);
-                        rlutil::locate(7,24);  cout << "  Utilice las teclas correspondientes!";
-                        break;
+            default:
+                rlutil::cls();
+                rlutil::setColor(rlutil::RED);
+                rlutil::locate(6,23);  cout << "=========================================";
+                rlutil::locate(6,24);  cout << "|";
+                rlutil::locate(46,24); cout << "|";
+                rlutil::locate(6,25);  cout << "=========================================";
+                rlutil::setColor(rlutil::WHITE);
+                rlutil::locate(7,24);  cout << "  Utilice las teclas correspondientes!";
+                break;
             }
     }while (corteMenu !=0);
 }
