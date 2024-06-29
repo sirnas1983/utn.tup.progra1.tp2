@@ -17,11 +17,12 @@ int main()
     //CAPA DE INTRO DEL JUEGO
     intro();
     musicaFondo();
-    // MUSICA QUE ESTARï¿½ DE FONDO DURANTE TODO EL JUEGO (EN LOOP)
+    // MUSICA QUE ESTARÁ DE FONDO DURANTE TODO EL JUEGO (EN LOOP)
     //PlaySound(TEXT("startSong.wav"),NULL,SND_FILENAME | SND_ASYNC | SND_LOOP);
 
-    // CAPA DE MENï¿½ PRINCIPAL
+    // CAPA DE MENÚ PRINCIPAL
     while (corteTotal !=0){
+
         menuJuego();
         corteTotal = 0;
         rlutil::cls();

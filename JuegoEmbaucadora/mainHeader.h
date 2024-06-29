@@ -9,7 +9,7 @@ void intro();
 void menuJuego();
 void salir(int &corteMenu);
 
-// VARIABLES GLOBALES
+// VARIABLES GLOBALES (extern)
 extern string globalNombre;  //agregado en ultima version
 extern int globalPuntos;     //agregado en ultima version
 

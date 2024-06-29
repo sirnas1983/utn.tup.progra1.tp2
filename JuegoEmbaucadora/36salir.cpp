@@ -11,6 +11,7 @@ rlutil::cls();
 
     while(corteSalir !=0){
 
+
         fondoVentana();
 
         rlutil::locate(42,15); cout << " SEGURO QUE QUIERE SALIR DEL JUEGO?";
