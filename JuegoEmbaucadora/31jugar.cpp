@@ -278,15 +278,32 @@ void jugar() {
 
         while(ingresarNombres!=0 ){
 
-            fondoVentana();
 
-            rlutil::setColor(rlutil::GREEN);
-            rlutil::locate(35,5);   cout << "Por favor ingrese los nombres de los jugadores" << endl;
-            rlutil::setColor(rlutil::WHITE);
-            rlutil::locate(20,7);   cout << "Jugador N 1: " << endl;
-            rlutil::locate(35,7);   cin  >> nombreJug1;
-            rlutil::locate(70,7);   cout << "Jugador N 2: " << endl;
-            rlutil::locate(85,7);   cin  >> nombreJug2;
+            int nombreRepetido = 1;
+            while (nombreRepetido != 0) {
+                fondoVentana();
+                rlutil::setColor(rlutil::GREEN);
+                rlutil::locate(35,5);   cout << "Por favor ingrese los nombres de los jugadores" << endl;
+                rlutil::setColor(rlutil::WHITE);
+                rlutil::locate(20,7);   cout << "Jugador N 1: " << endl;
+                rlutil::locate(35,7);   cin  >> nombreJug1;
+                rlutil::locate(70,7);   cout << "Jugador N 2: " << endl;
+                rlutil::locate(85,7);   cin  >> nombreJug2;
+
+                if (nombreJug1 == nombreJug2){
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(40,15); cout << "=========================================";
+                    rlutil::locate(40,16); cout << "|";
+                    rlutil::locate(80,16); cout << "|";
+                    rlutil::locate(40,17); cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(42,16); cout << "   Los nombres deben ser distintos!!";
+                    pausarYLimpiarPantalla();
+                }else{
+                    nombreRepetido = 0;
+                }
+
+            }
 
             rlutil::setColor(rlutil::GREEN);
             rlutil::locate(40,15); cout << "=========================================";
