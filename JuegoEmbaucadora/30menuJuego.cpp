@@ -1,8 +1,13 @@
 #include <iostream>
 #include <locale>
+#include <string>
 #include "rlutil.h"
+#include <windows.h>
 #include "mainHeader.h"
 using namespace std;
+
+string topScoreNombre = "";
+int topScorePuntaje = 0;
 
 void menuJuego(){
     // Configuraciones visuales
@@ -12,7 +17,6 @@ void menuJuego(){
     rlutil::setColor(rlutil::WHITE);
 
     int corteMenu  = 1;
-    //int corteSalir = 1;
     int  y = 0;
     int contador = 0;
 
@@ -106,7 +110,7 @@ void menuJuego(){
                         break;
 
                     case 2: // SI SE ESTA POSICIONADO EN "ESTADISTICAS"
-                        estadisticas();
+                        mostrarMejorPuntaje();
                         break;
 
                     case 3: // SI SE ESTA POSICIONADO EN "CREDITOS"

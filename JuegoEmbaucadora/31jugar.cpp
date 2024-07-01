@@ -6,8 +6,12 @@
 #include <windows.h>
 #include "rlutil.h"
 #include "mainHeader.h"
+#include <cctype>
 
 using namespace std;
+
+extern int topScorePuntaje;
+extern string topScoreNombre;
 
 // Funci�n para calcular el puntaje de la mano de un jugador en funci�n de la carta embaucadora
 int calcularPuntaje(int emb, int vectorMano[], int vectorPalo[], int vectorDePuntaje[]){
@@ -88,15 +92,35 @@ bool cambioEmbaucadora(int &puntajeJugador, string nombreJugador, int &embaucado
     char opcion;
     int embaucadoraAnt = embaucadora;
     do {
-        rlutil::locate(10,y); cout << nombreJugador << " tienes la posibilidad de cambiar la embaucadora! �Quieres hacerlo? S para s�, N para no: ";
-        cin >> opcion;
+        rlutil::setColor(rlutil::GREEN);
+        rlutil::locate(9,18);   cout << "===========================================================================================================";
+        rlutil::locate(9,19);   cout << "|";
+        rlutil::locate(115,19); cout << "|";
+        rlutil::locate(9,20);   cout << "===========================================================================================================";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(13,19);  cout << nombreJugador << " Tienes la posibilidad de cambiar la embaucadora! Quieres hacerlo? S para si, N para no: ";
+        //cin >> opcion;
+        switch (rlutil::getkey()){
+                case   83:   //S Mayuscula
+                    opcion = 'S';
+                    break;
+                case  115:   //S Minuscula
+                    opcion = 'S';
+                    break;
+                case   78:   //N Mayuscula
+                    opcion = 'N';
+                    break;
+                case  110:   //N Minuscula
+                    opcion = 'N';
+                    break;
+        }
     } while (opcion != 'S' && opcion != 'N');
     if (opcion == 'S'){
         do{
             embaucadora = aleatorioEntre(0, 3);
         } while(embaucadora == embaucadoraAnt);
         rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(40,y+2); cout << "Nueva carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
+        rlutil::locate(45,22); cout << "Nueva carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
         rlutil::setColor(rlutil::WHITE);
         puntajeJugador -= 20;
         return true;
@@ -107,43 +131,58 @@ bool cambioEmbaucadora(int &puntajeJugador, string nombreJugador, int &embaucado
 
 // Funci�n para mostrar el puntaje acumulado
 void mostrarPuntajeAcumulado(string nombreJug1, string nombreJug2, int puntajeJug1, int puntajeJug2) {
-    rlutil::locate(47,25); cout << "====PUNTAJE DE MANO====" << endl;
-    rlutil::locate(47,26); cout << nombreJug1 << ": " << puntajeJug1 << endl;
-    rlutil::locate(47,27); cout << nombreJug2 << ": " << puntajeJug2 << endl;
-    rlutil::locate(47,28); cout << "=======================" << endl;
+    rlutil::locate(47,24); cout << "==== PUNTAJE DE MANO ====" << endl;
+    rlutil::locate(47,25); cout << "       " << nombreJug1 << ": " << puntajeJug1 << endl;
+    rlutil::locate(47,26); cout << "       " << nombreJug2 << ": " << puntajeJug2 << endl;
+    rlutil::locate(47,27); cout << "=========================" << endl;
 }
 
-// Funci�n para pausar y limpiar la pantalla
+// Funcion para pausar y limpiar la pantalla
 void pausarYLimpiarPantalla() {
-    system("pause");
+    rlutil::setColor(rlutil::GREEN);
+    rlutil::locate(36,29); cout << "  << ";
+    rlutil::locate(80,29); cout << ">>  ";
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(41,29); system("pause");
     system("cls");
 
 }
 
-
 // Funcion para imprimir tabla y determinar el ganador
 void imprimirTablaPuntajes(int x, int y, string nombreJug1, string nombreJug2, int vectorPuntajeJug1[], int vectorPuntajeJug2[], int acumJug1, int acumJug2) {
-    rlutil::locate(x, y); cout << "Tabla de Puntajes:" << endl;
+
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(52, 3);  cout << "TABLA DE PUNTAJES:" << endl;
+    rlutil::setColor(rlutil::WHITE);
     rlutil::locate(x, ++y); cout << "Ronda\t\t" << nombreJug1 << "\t\t" << nombreJug2 << endl;
-    rlutil::locate(x, ++y); cout << "---------------------------------------------" << endl;
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(x, ++y); cout << "=============================================" << endl;
     for (int i = 0; i < 3; i++) {
+        rlutil::setColor(rlutil::WHITE);
         rlutil::locate(x, ++y); cout << i + 1 << "\t\t" << vectorPuntajeJug1[i] << "\t\t" << vectorPuntajeJug2[i] << endl;
     }
-    rlutil::locate(x, ++y); cout << "---------------------------------------------" << endl;
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(x, ++y); cout << "=============================================" << endl;
+    rlutil::setColor(rlutil::WHITE);
     rlutil::locate(x, ++y); cout << "Cambios\t\t" << acumJug1 - total(vectorPuntajeJug1) << "\t\t" << acumJug2 - total(vectorPuntajeJug2) << endl;
-    rlutil::locate(x, ++y); cout << "---------------------------------------------" << endl;
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(x, ++y); cout << "=============================================" << endl;
+    rlutil::setColor(rlutil::WHITE);
     rlutil::locate(x, ++y); cout << "Totales\t\t" << acumJug1 << "\t\t" << acumJug2 << endl;
-    rlutil::locate(x, ++y); cout << "---------------------------------------------" << endl;
+    rlutil::setColor(rlutil::YELLOW);
+    rlutil::locate(x, ++y); cout << "=============================================" << endl;
     rlutil::locate(x, ++y); rlutil::msleep(500);  // Pausa de 500ms
 
-    // Declaraci�n del ganador en funci�n de los puntajes acumulados
+    // Declaracion del ganador en funcion de los puntajes acumulados
     if (acumJug1 != acumJug2) {
-        rlutil::locate(x, ++y); cout << "-----------------------------------------" << endl;
-        rlutil::locate(x, ++y); cout << "��FELICITACIONES " << (acumJug2 > acumJug1 ? nombreJug2 : nombreJug1) << "!!! ���HAS GANADO!!!" << endl;
-        rlutil::locate(x, ++y); cout << "Puntaje: " << (acumJug2 > acumJug1 ? acumJug2 : acumJug1) << " puntos." << endl;
-        rlutil::locate(x, ++y); cout << "-----------------------------------------" << endl;
+        rlutil::locate(x, ++y); cout << "=========================================" << endl;
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(x, ++y); cout << "FELICITACIONES " << (acumJug2 > acumJug1 ? nombreJug2 : nombreJug1) << "!!! HAS GANADO !!!" << endl;
+        rlutil::locate(55, 19); cout << "Puntaje: " << (acumJug2 > acumJug1 ? acumJug2 : acumJug1) << " puntos." << endl;
+        rlutil::setColor(rlutil::BLUE);
+        rlutil::locate(38, 20); cout << "==================================================" << endl;
     } else {
-        rlutil::locate(x, ++y); cout << "���Ha ocurrido un empate!!!" << endl;
+        rlutil::locate(x, ++y); cout << "Ha ocurrido un empate!!!" << endl;
         string ganador = "";
         int mejorManoJugador1 = 0;
         int mejorManoJugador2 = 0;
@@ -172,14 +211,13 @@ void imprimirTablaPuntajes(int x, int y, string nombreJug1, string nombreJug2, i
 void jugar() {
     // Inicializar la semilla del generador de n�meros aleatorios - Esto debe ir s� o s� al inicio del programa
     srand(static_cast<unsigned int>(time(0)));
+    system("cls");
     fondoVentana();
 
     // Constantes del Juego y declaraci�n de variables
     int vectorDePuntaje[5] = {10, 11, 12, 15, 20}; // Vector fijo con los puntajes de las cartas
     string vectorDeVisualizacionValor[5] = {"10", "J", "Q", "K", "A"}; // Vector fijo con la designacion de las cartas
-    string vectorDeVisualizacionPalo[4] = {"Pica", "Trebol", "Coraz�n", "Diamante"}; // Vector fijo con la designaci�n de los palos
-    string topScoreNombre = "";
-    int topScorePuntaje = 0;
+    string vectorDeVisualizacionPalo[4] = {"Pica", "Trebol", "Corazon", "Diamante"}; // Vector fijo con la designaci�n de los palos
     int vectorPuntajeJug1[3]; // Vector para acumular el puntaje por mano del jugador 1
     int vectorPuntajeJug2[3]; // Vector para acumular el puntaje por mano del jugador 2
     bool cartasSeleccionadas[20]; // Vector para llevar el seguimiento de las cartas que salieron en la mano
@@ -217,9 +255,9 @@ void jugar() {
             rlutil::setColor(rlutil::GREEN);
             rlutil::locate(35,5);   cout << "Por favor ingrese los nombres de los jugadores" << endl;
             rlutil::setColor(rlutil::WHITE);
-            rlutil::locate(20,7);   cout << "Jugador N� 1: " << endl;
+            rlutil::locate(20,7);   cout << "Jugador N 1: " << endl;
             rlutil::locate(35,7);   cin  >> nombreJug1;
-            rlutil::locate(70,7);   cout << "Jugador N� 2: " << endl;
+            rlutil::locate(70,7);   cout << "Jugador N 2: " << endl;
             rlutil::locate(85,7);   cin  >> nombreJug2;
 
 
@@ -268,7 +306,11 @@ void jugar() {
                         break;
                     }
 
-              }
+                }
+
+                if (confirmarNombres==0){
+                  confirmarNombres=1;
+            }
         }
 
         //pausarYLimpiarPantalla();
@@ -285,22 +327,22 @@ void jugar() {
                 generarManoAleatoria(vectorManoJug2, vectorPaloJug2, cartasSeleccionadas);
 
                 rlutil::setColor(rlutil::RED);
-                rlutil::locate(60,3); cout << "EMBAUCADO!" << endl;
+                rlutil::locate(52,3); cout << "EMBAUCADO!" << endl;
 
                 rlutil::setColor(rlutil::WHITE);
-                rlutil::locate(53,5); cout << "MANO N�: " << ronda << endl;
+                rlutil::locate(43,5); cout << "MANO N: " << ronda << "   " << nombreJug1 << " vs " << nombreJug2 << endl;
                 rlutil::locate(40,6); cout << "===================================" << endl;
                 // Mostrar la carta embaucadora
-                rlutil::locate(40,7); cout << "|Carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << "|" << endl;
+                rlutil::locate(40,7); cout << "    Carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
                 rlutil::locate(40,8);cout << "===================================" << endl;
 
                 // Mostrar la mano del Jugador 1
-                rlutil::locate(30,11); cout <<nombreJug1 <<" (" << acumJug1 <<"):" << endl;
+                rlutil::locate(35,11); cout <<nombreJug1 <<" (" << acumJug1 <<"):" << endl;
                 mostrarMano(vectorManoJug1, vectorPaloJug1, vectorDeVisualizacionValor, vectorDeVisualizacionPalo,0);
 
                 // Mostrar la mano del Jugador 2
 
-                rlutil::locate(70,11); cout <<nombreJug2 <<" (" << acumJug2 <<"):" << endl;
+                rlutil::locate(75,11); cout <<nombreJug2 <<" (" << acumJug2 <<"):" << endl;
                 mostrarMano(vectorManoJug2, vectorPaloJug2, vectorDeVisualizacionValor, vectorDeVisualizacionPalo,40);
 
                 // M�dulo para cambiar carta embaucadora en funci�n del puntaje acumulado y la selecci�n del jugador
@@ -331,6 +373,7 @@ void jugar() {
             }
         fondoVentana();
         imprimirTablaPuntajes(40, 5, nombreJug1, nombreJug2, vectorPuntajeJug1, vectorPuntajeJug2,acumJug1, acumJug2);
+
         // Registramos el valor en topScores si corresponde
         if (acumJug1 > topScorePuntaje || acumJug2 > topScorePuntaje){
             if (acumJug1 > acumJug2){
@@ -340,14 +383,52 @@ void jugar() {
                 topScoreNombre = nombreJug2;
                 topScorePuntaje = acumJug2;
             }
-            rlutil::locate(40,17);cout << "��Felicitaciones "<< topScoreNombre <<"!! Has logrado un nuevo record!" << endl;
-            rlutil::locate(40,18);cout << "-----------------------------------------" << endl;
+            rlutil::setColor(rlutil::WHITE);
+            rlutil::locate(38,17);cout << "Felicitaciones "<< topScoreNombre <<"!! Has logrado un nuevo record!" << endl;
+            rlutil::setColor(rlutil::BLUE);
+            rlutil::locate(38,18);cout << "==================================================" << endl;
         }
-        rlutil::locate(40,19);cout << "Desea jugar otra partida? S para si, N para no" << endl;
+        rlutil::setColor(rlutil::GREEN);
+        rlutil::locate(38,21); cout << "==================================================";
+        rlutil::locate(38,22); cout << "|";
+        rlutil::locate(87,22); cout << "|";
+        rlutil::locate(38,23); cout << "==================================================";
+        rlutil::setColor(rlutil::WHITE);
+        rlutil::locate(40,22); cout << "Desea jugar otra partida? S para si, N para no" << endl;
 
-        cin >> jugarOtra;
+        switch (rlutil::getkey()) {
+                    case 115: // S Minuscula
+                        jugarOtra = 'S';
+                        rlutil::cls();
+                        break;
+
+                    case 83:  // S Mayuscula
+                        jugarOtra = 'S';
+                        rlutil::cls();
+                        break;
+
+                    case 110: // N Minuscula
+                        jugarOtra = 'n';
+                        rlutil::cls();
+                        break;
+
+                    case 78: // N Mayuscula
+                        jugarOtra = 'N';
+                        rlutil::cls();
+                        break;
+
+                    default:
+                        rlutil::setColor(rlutil::RED);
+                        rlutil::locate(40,24); cout << "=========================================";
+                        rlutil::locate(40,25); cout << "|";
+                        rlutil::locate(80,25); cout << "|";
+                        rlutil::locate(40,26); cout << "=========================================";
+                        rlutil::setColor(rlutil::WHITE);
+                        rlutil::locate(42,25); cout << " Utilice las teclas correspondientes!";
+                        break;
+                    }
     } while(jugarOtra == 'S');
-    pausarYLimpiarPantalla();
 }
+
 
 

@@ -10,8 +10,8 @@ void menuJuego();
 void salir(int &corteMenu);
 
 // VARIABLES GLOBALES (extern)
-extern string globalNombre;  //agregado en ultima version
-extern int globalPuntos;     //agregado en ultima version
+//extern string globalNombre;  //agregado en ultima version
+//extern int globalPuntos;     //agregado en ultima version
 
 //SUBCAPAS
     // JUGAR
@@ -31,7 +31,7 @@ extern int globalPuntos;     //agregado en ultima version
     // CREDITOS
     void creditos();
     // ESTADISTICAS
-    void estadisticas();
+    void mostrarMejorPuntaje();
     // CONTACTO
     void contacto();
 

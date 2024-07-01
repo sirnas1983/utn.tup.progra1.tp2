@@ -1,80 +1,55 @@
 #include <iostream>
 #include <locale>
 #include "rlutil.h"
+#include <string>
+#include <windows.h>
 #include "mainHeader.h"
+
 using namespace std;
+using namespace rlutil;
 
-void estadisticas(){
+extern int topScorePuntaje;
+extern string topScoreNombre;
 
+void mostrarMejorPuntaje() {
+    // Limpiar la pantalla
     rlutil::hidecursor();
     rlutil::cls();
+    fondoVentana();
 
-    int corteEstadisticas = 1;
+    // Obtener las dimensiones de la consola
+    int ancho = tcols();
+    int alto = trows();
 
-    while (corteEstadisticas !=0) {
+    // Texto a mostrar
+    string titulo = "MEJOR PUNTAJE";
+    string puntaje = "Mayor puntaje: " + to_string(topScorePuntaje);
+    string nombre = "Jugador: " + topScoreNombre;
 
-        fondoVentana();
-        rlutil::setColor(rlutil::YELLOW);
-        rlutil::locate(56,3);    cout << "CREDITOS";
+    // Calcular la posici�n central para cada l�nea
+    int tituloPos = (ancho - titulo.length()) / 2;
+    int puntajePos = (ancho - puntaje.length()) / 2;
+    int nombrePos = (ancho - nombre.length()) / 2;
 
-        rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(55,6);    cout << "GRUPO N 18";
+    // Calcular la l�nea central para el t�tulo
+    int tituloLinea = alto / 2 - 1;
+    int puntajeLinea = alto / 2;
+    int nombreLinea = alto / 2 + 1;
 
-        rlutil::locate(21,9);    cout << "      APELLIDO Y NOMBRE    |     ROL       |       COMENTARIO         ";
-        rlutil::locate(21,11);   cout << " HIEBL DARIAN              |    ALUMNO     | LEGAJO = 30390           ";
-        rlutil::locate(21,13);   cout << " FREDES JACOB              |    ALUMNO     | LEGAJO = 27233           ";
-        rlutil::locate(21,15);   cout << " SIMON ANGEL               |    PROFESOR   | EXCELENTE PROFESIONAL    ";
-        rlutil::locate(21,17);   cout << " FERNADEZ MAXIMILIANO      |    PROFESOR   | EXCELENTE PROFESIONAL    ";
-        rlutil::locate(21,19);   cout << " VELEZ LAURA               |    PROFESORA  | EXCELENTE PROFESIONAL    ";
-        rlutil::locate(21,21);   cout << " CAMPOS BRIAN              |    PROFESOR   | EXCELENTE PROFESIONAL    ";
-        rlutil::locate(21,23);   cout << " TAPIA ARIEL               |    JTP        | EXCELENTE PROFESIONAL    ";
-        rlutil::locate(21,25);   cout << " NIETO ALEJANDRO           |    AYUDANTE   | EXCELENTE PROFESIONAL    ";
+    // Mostrar el t�tulo centrado
+    locate(tituloPos, tituloLinea);
+    cout << titulo;
 
-        rlutil::locate(20,8);    cout <<(char)201;
-        rlutil::locate(100,8);   cout <<(char)187;
-        rlutil::locate(20,26);   cout <<(char)200;
-        rlutil::locate(100,26);  cout <<(char)188;
+    // Mostrar el puntaje centrado
+    locate(puntajePos, puntajeLinea);
+    cout << puntaje;
 
-        // LINEAS HORIZONTALES
-        for (int y = 8; y <= 27; y += 2){
-            for (int x = 21; x <= 99; x++){
-            rlutil::locate(x,y);    cout <<(char)205;
-            }
-        }
-        // MARCO IZQUIERDO
-        for (int y = 9; y <= 25; y++){
-            for (int x = 20; x <= 20; x++){
-            rlutil::locate(x,y);    cout <<(char)186;
-            }
-        }
-        // MARCO IZQUIERDO
-        for (int y = 9; y <= 25; y++){
-            for (int x = 100; x <= 100; x++){
-            rlutil::locate(x,y);    cout <<(char)186;
-            }
-        }
+    // Mostrar el nombre centrado
+    locate(nombrePos, nombreLinea);
+    cout << nombre << endl;
 
-        rlutil::setColor(rlutil::GREEN);
-        rlutil::locate(39,29);  cout << " <ESC>";
-        rlutil::setColor(rlutil::WHITE);
-        rlutil::locate(48,29);  cout <<" Para volver al menu principal  ";
-
-        switch(rlutil::getkey()){
-            case 0:
-                corteEstadisticas = 0;
-                rlutil::cls();
-                break;
-
-            default:
-                rlutil::cls();
-                rlutil::setColor(rlutil::RED);
-                rlutil::locate(7,4);  cout << "=========================================";
-                rlutil::locate(7,5);  cout << "|";
-                rlutil::locate(47,5); cout << "|";
-                rlutil::locate(7,6);  cout << "=========================================";
-                rlutil::setColor(rlutil::WHITE);
-                rlutil::locate(8,5);  cout << "  Utilice las teclas correspondientes!";
-                break;
-            }
-    }
+    // Pausar la pantalla
+    rlutil::locate(1,30);
+    pausarYLimpiarPantalla();
 }
+
