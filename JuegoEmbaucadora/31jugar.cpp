@@ -260,17 +260,15 @@ void jugar() {
             rlutil::locate(70,7);   cout << "Jugador N 2: " << endl;
             rlutil::locate(85,7);   cin  >> nombreJug2;
 
+            rlutil::setColor(rlutil::GREEN);
+            rlutil::locate(40,15); cout << "=========================================";
+            rlutil::locate(40,16); cout << "|";
+            rlutil::locate(80,16); cout << "|";
+            rlutil::locate(40,17); cout << "=========================================";
+            rlutil::setColor(rlutil::WHITE);
+            rlutil::locate(42,16); cout << "      Confirma los nombres? (S/N)";
 
             while (confirmarNombres !=0){
-
-                //rlutil::cls();
-                rlutil::setColor(rlutil::GREEN);
-                rlutil::locate(40,15); cout << "=========================================";
-                rlutil::locate(40,16); cout << "|";
-                rlutil::locate(80,16); cout << "|";
-                rlutil::locate(40,17); cout << "=========================================";
-                rlutil::setColor(rlutil::WHITE);
-                rlutil::locate(42,16); cout << "      Confirma los nombres? (S/N)";
 
                 switch (rlutil::getkey()) {
                     case 115: // S Minuscula
