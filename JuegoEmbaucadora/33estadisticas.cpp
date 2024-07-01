@@ -27,7 +27,7 @@ void mostrarMejorPuntaje() {
 
         // Texto a mostrar
         string titulo = "MEJOR PUNTAJE";
-        string puntaje = "Mayor puntaje: " + to_string(topScorePuntaje);
+        string puntaje = to_string(topScorePuntaje);
         string nombre = "Jugador: " + topScoreNombre;
 
         // Calcular la posiciOn central para cada linea

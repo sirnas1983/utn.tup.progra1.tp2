@@ -271,7 +271,7 @@
 	<windows.h>
 	"mainHeader.h"
 
-1719795240 source:c:\mac\home\desktop\tpcongit\31jugar.cpp
+1719798220 source:c:\mac\home\desktop\tpcongit\31jugar.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -288,7 +288,7 @@
 	"rlutil.h"
 	"mainHeader.h"
 
-1719794204 source:c:\mac\home\desktop\tpcongit\33estadisticas.cpp
+1719797387 source:c:\mac\home\desktop\tpcongit\33estadisticas.cpp
 	<iostream>
 	<locale>
 	"rlutil.h"

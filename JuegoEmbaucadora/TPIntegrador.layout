@@ -2,59 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="32reglas.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4793" topLine="60" />
-		</Cursor>
-	</File>
-	<File name="33estadisticas.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3152" topLine="49" />
-		</Cursor>
-	</File>
 	<File name="31jugar.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11096" topLine="269" />
-		</Cursor>
-	</File>
-	<File name="34creditos.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2357" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="10main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="461" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="30menuJuego.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="100" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="mainHeader.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="637" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="60dibujoCartasMenu.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12840" topLine="210" />
-		</Cursor>
-	</File>
-	<File name="36salir.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1211" topLine="26" />
-		</Cursor>
-	</File>
-	<File name="40fondoVentana.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="110" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="35contacto.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="238" topLine="24" />
+			<Cursor1 position="3593" topLine="120" />
 		</Cursor>
 	</File>
 	<File name="50dibujoLetras.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -62,9 +12,59 @@
 			<Cursor1 position="83" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="34creditos.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2357" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="35contacto.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="238" topLine="24" />
+		</Cursor>
+	</File>
 	<File name="20intro.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="479" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="40fondoVentana.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="110" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="mainHeader.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="637" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="33estadisticas.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2718" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="10main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="461" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="32reglas.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4793" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="30menuJuego.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="100" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="36salir.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1211" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="60dibujoCartasMenu.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12840" topLine="210" />
 		</Cursor>
 	</File>
 	<Target name="Debug" top="31jugar.cpp">

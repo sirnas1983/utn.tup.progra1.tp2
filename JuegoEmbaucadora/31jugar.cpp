@@ -93,28 +93,56 @@ bool cambioEmbaucadora(int &puntajeJugador, string nombreJugador, int &embaucado
     int embaucadoraAnt = embaucadora;
     do {
         rlutil::setColor(rlutil::GREEN);
-        rlutil::locate(9,18);   cout << "===========================================================================================================";
+        rlutil::locate(9,18);   cout << "========================================================================================================";
         rlutil::locate(9,19);   cout << "|";
-        rlutil::locate(115,19); cout << "|";
-        rlutil::locate(9,20);   cout << "===========================================================================================================";
+        rlutil::locate(112,19); cout << "|";
+        rlutil::locate(9,20);   cout << "========================================================================================================";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(13,19);  cout << nombreJugador << " Tienes la posibilidad de cambiar la embaucadora! Quieres hacerlo? S para si, N para no: ";
         //cin >> opcion;
-        switch (rlutil::getkey()){
+
+        int confirmarCambio = 1;
+
+        while (confirmarCambio != 0){
+            switch (rlutil::getkey()){
                 case   83:   //S Mayuscula
                     opcion = 'S';
+                    confirmarCambio = 0 ;
                     break;
                 case  115:   //S Minuscula
                     opcion = 'S';
+                    confirmarCambio = 0 ;
                     break;
                 case   78:   //N Mayuscula
                     opcion = 'N';
+                    confirmarCambio = 0 ;
                     break;
                 case  110:   //N Minuscula
                     opcion = 'N';
+                    confirmarCambio = 0 ;
                     break;
+                default:
+                    rlutil::setColor(rlutil::RED);
+                    rlutil::locate(40,21); cout << "=========================================";
+                    rlutil::locate(40,22); cout << "|";
+                    rlutil::locate(80,22); cout << "|";
+                    rlutil::locate(40,23); cout << "=========================================";
+                    rlutil::setColor(rlutil::WHITE);
+                    rlutil::locate(42,22); cout << " Utilice las teclas correspondientes!";
+                    break;
+
+            }
+
         }
     } while (opcion != 'S' && opcion != 'N');
+
+    rlutil::setColor(rlutil::BLACK);
+    rlutil::locate(40,21); cout << "=========================================";
+    rlutil::locate(40,22); cout << "|";
+    rlutil::locate(80,22); cout << "|";
+    rlutil::locate(40,23); cout << "=========================================";
+    rlutil::locate(42,22); cout << " Utilice las teclas correspondientes!";
+
     if (opcion == 'S'){
         do{
             embaucadora = aleatorioEntre(0, 3);
@@ -328,7 +356,7 @@ void jugar() {
                 rlutil::locate(52,3); cout << "EMBAUCADO!" << endl;
 
                 rlutil::setColor(rlutil::WHITE);
-                rlutil::locate(43,5); cout << "MANO N: " << ronda << "   " << nombreJug1 << " vs " << nombreJug2 << endl;
+                rlutil::locate(43,5); cout << "RONDA N: " << ronda << "   " << nombreJug1 << " vs " << nombreJug2 << endl;
                 rlutil::locate(40,6); cout << "===================================" << endl;
                 // Mostrar la carta embaucadora
                 rlutil::locate(40,7); cout << "    Carta embaucadora: " << vectorDeVisualizacionPalo[embaucadora] << endl;
