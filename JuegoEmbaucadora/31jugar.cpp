@@ -396,37 +396,45 @@ void jugar() {
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(40,22); cout << "Desea jugar otra partida? S para si, N para no" << endl;
 
-        switch (rlutil::getkey()) {
+        int salirJuego = 1;
+
+        while (salirJuego !=0) {
+            switch (rlutil::getkey()) {
                     case 115: // S Minuscula
                         jugarOtra = 'S';
+                        salirJuego = 0;
                         rlutil::cls();
                         break;
 
                     case 83:  // S Mayuscula
                         jugarOtra = 'S';
+                        salirJuego = 0;
                         rlutil::cls();
                         break;
 
                     case 110: // N Minuscula
-                        jugarOtra = 'n';
+                        jugarOtra = 'N';
+                        salirJuego = 0;
                         rlutil::cls();
                         break;
 
                     case 78: // N Mayuscula
                         jugarOtra = 'N';
+                        salirJuego = 0;
                         rlutil::cls();
                         break;
 
                     default:
                         rlutil::setColor(rlutil::RED);
-                        rlutil::locate(40,24); cout << "=========================================";
-                        rlutil::locate(40,25); cout << "|";
-                        rlutil::locate(80,25); cout << "|";
-                        rlutil::locate(40,26); cout << "=========================================";
+                        rlutil::locate(42,24); cout << "=========================================";
+                        rlutil::locate(42,25); cout << "|";
+                        rlutil::locate(82,25); cout << "|";
+                        rlutil::locate(42,26); cout << "=========================================";
                         rlutil::setColor(rlutil::WHITE);
-                        rlutil::locate(42,25); cout << " Utilice las teclas correspondientes!";
+                        rlutil::locate(44,25); cout << " Utilice las teclas correspondientes!";
                         break;
                     }
+        }
     } while(jugarOtra == 'S');
 }
 

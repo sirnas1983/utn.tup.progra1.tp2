@@ -13,7 +13,6 @@ using namespace std;
 int main()
 {
     int corteTotal = 1;
-
     //CAPA DE INTRO DEL JUEGO
     intro();
     musicaFondo();

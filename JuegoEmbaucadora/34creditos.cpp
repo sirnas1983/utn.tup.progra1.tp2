@@ -55,7 +55,7 @@ void creditos(){
         }
 
         rlutil::setColor(rlutil::GREEN);
-        rlutil::locate(39,29);  cout << " <ESC>";
+        rlutil::locate(41,29);  cout << " <ESC> ";
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(48,29);  cout <<" Para volver al menu principal  ";
 
